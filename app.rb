@@ -9,7 +9,7 @@ set :database, {adapter: "sqlite3", database: "restaurant.sqlite3"}
 
 get '/' do
 	@style = "css/style.css"
-	@title = "Restau-RANT-or-RAVE"
+	@title = "The Rant & Rave Community"
 	erb :home
 end
 

@@ -1,0 +1,32 @@
+
+*{
+	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+#footerTag {
+	text-align: center;
+	position: relative;
+	padding-top: 15px;
+	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+
+
+
+/* Home Page Style */
+
+/* Contact Page style */
+
+.navbar-form{
+	padding: 0px 50px;
+}
+
+.containerContact{
+display: inline-block;
+}
+
+.btnContact{
+	
+}
+/* Profile Page style */
+
+/* Search_Users Page style*/
+
