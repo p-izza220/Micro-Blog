@@ -10,12 +10,16 @@ set :database, {adapter: "sqlite3", database: "restaurant.sqlite3"}
 get '/' do
 	@style = "css/style.css"
 	@title = "The Rant & Rave Community"
+  @users = User.all
 	erb :home
 end
 
-get '/profile' do
+
+get '/profile/:id' do
 	@style = "css/style.css" 
 	@title = "@first_name @last_name"
+  @user = User.find(params[:id])
+
 	erb :profile
 end
 
