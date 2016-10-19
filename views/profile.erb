@@ -7,16 +7,7 @@
 			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/profile" id="profileForm">
-				<label for="name">Your name: <%= @user.first_name + " " + @user.last_name if @user %></label>
-				<br>
-				<br>
-				<label for="email">Your contact email: <%= @user.email if @user %></label>
-				<br>
-				<br>
-				<label for="name">Your username: <%= @user.username if @user %></label>
-				<br>
-				<br>
-				<label for="name">Your password: <%= @user.password if @user %></label>
+				<label for="name"><%= @user.first_name + " " + @user.last_name if @user %></label>
 				<br>
 				<br>
 				<input type="submit" class="btnContact" value="Edit" />
@@ -29,15 +20,14 @@
 
 
 <div class="commentdetails">
-	<%= @user.first_name + " " + @user.last_name + "visited" %>
+	<%= @user.first_name + " " + @user.last_name + "visited" if @user %>
 	<% @user.comments.each do |comment| %>
 		<strong><%= comment.restaurant.restaurant_name %></strong> 
 		<p><%= comment.comment %></p>
 		<% 5.times do |i| %>
 		<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>
 		<% end %>
-	<% end %>
-<% end if @user %>
+	<% end if @user %>
 </div>
 
 <!-- 

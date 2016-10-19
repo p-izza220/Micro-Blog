@@ -31,6 +31,13 @@ get '/profile/:id' do
   erb :profile
 end
 
+get '/settings' do
+  @style = "css/style.css" 
+  @title = "@first_name @last_name"
+
+  erb :profile
+end
+
 get '/search_users' do
 	@style = "css/style.css" 
 	@title = "Search"
@@ -54,11 +61,6 @@ get '/stats' do
   @title = "Food for Thought"
   erb :stats
  end 
-
-
-
-
-
 
 post '/contact' do
   @title = "Contact Restau-RANT-or-RAVE"
