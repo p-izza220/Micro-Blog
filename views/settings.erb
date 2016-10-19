@@ -1,29 +1,28 @@
-<div class="container">	
-<!-- 	<div class="col-md-12 text-center"> -->
-<!-- 	<div class="col-md-12" id="profiletest"> -->
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-4">
-				<form method="POST" action="/profile" id="profileForm">
-				<label for="name">Your name: <%= @user.first_name + " " + @user.last_name if @user %></label>
-				<br>
-				<br>
-				<label for="email">Your contact email: <%= @user.email if @user %></label>
-				<br>
-				<br>
-				<label for="name">Your username: <%= @user.username if @user %></label>
-				<br>
-				<br>
-				<label for="name">Your password: <%= @user.password if @user %></label>
-				<br>
-				<br>
-				<input type="submit" class="btnContact" value="Edit" />
-				</form>
-				<span id="console"><%= @msg %></span>
+<div class="settingsWrapper">
+	<div class="container">	
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+				</div>
+				<div class="col-xs-4">
+					<form method="POST" action="/profile" id="profileForm">
+					<label for="name">Your name: <%= @user.first_name + " " + @user.last_name if @user %></label>
+					<br>
+					<br>
+					<label for="email">Your contact email: <%= @user.email if @user %></label>
+					<br>
+					<br>
+					<label for="name">Your username: <%= @user.username if @user %></label>
+					<br>
+					<br>
+					<label for="name">Your password: <%= @user.password if @user %></label>
+					<br>
+					<br>
+					<input type="submit" class="btnContact" value="Edit" />
+					</form>
+					<span id="console"><%= @msg %></span>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-

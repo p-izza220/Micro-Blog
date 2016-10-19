@@ -40,7 +40,7 @@
 
 .text{
 	padding-top: 7px;
-	color: 
+	font:bold; 
 }
 
 #profiletest{
@@ -90,6 +90,10 @@
 	width: 250px;
 	border: solid black 1px;
 	margin: 0 auto;
+}
+
+#rating{
+	text-align: center;
 }
 
 /* Search_Users Page style*/
