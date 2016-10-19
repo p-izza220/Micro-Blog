@@ -3,9 +3,14 @@
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
+.mainContent{
+	min-height: 600px;
+}
+
 #contactCon{
 	border: solid lightgrey 1px;
 	background-color: lightgrey;
+	margin-bottom: 20px;
 
 }
 
@@ -84,6 +89,12 @@
 
 
 /* Profile Page style */
+
+.commentdetails{
+	width: 250px;
+	border: solid black 1px;
+	margin: 0 auto;
+}
 
 /* Search_Users Page style*/
 
