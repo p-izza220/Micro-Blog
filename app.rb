@@ -37,6 +37,11 @@ get '/sign_up' do
 	erb :sign_up
 end
 
+get '/stats' do 
+  @style = "css/style.css"
+  @title = "Food for Thought"
+  erb :stats
+ end 
 
 
 
