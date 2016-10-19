@@ -1,0 +1,44 @@
+<div class="container">	
+<!-- 	<div class="col-md-12 text-center"> -->
+<!-- 	<div class="col-md-12" id="profiletest"> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-2">
+			</div>
+			<div class="col-xs-4">
+				<form method="POST" action="/profile" id="profileForm">
+				<label for="name">Please enter your first name: </label>
+				<input type="text" name="name" placeholder="first name" />
+				<br>
+				<br>
+				<label for="name">Please enter your last name: </label>
+				<input type="text" name="name" placeholder="last name" />
+				<br>
+				<br>
+				<label for="email">Please enter your contact email: </label>
+				<input type="email" name="email" placeholder="e-mail" />
+				<br>
+				<br>
+				<label for="email">Please confirm your contact email: </label>
+				<input type="email" name="email" placeholder="e-mail" />
+				<br>
+				<br>
+				<label for="name">Please choose a username: </label>
+				<input type="text" name="name" placeholder="username" />
+				<br>
+				<br>
+				<label for="name">Please choose a password: </label>
+				<input type="text" name="name" placeholder="password" />
+				<br>
+				<br>
+				<label for="name">Please confirm your password: </label>
+				<input type="text" name="name" placeholder="password" />
+				<br>
+				<br>
+				<input type="submit" class="btnContact"/>
+				</form>
+				<span id="console"><%= @msg %></span>
+			</div>
+		</div>
+	</div>
+</div>
