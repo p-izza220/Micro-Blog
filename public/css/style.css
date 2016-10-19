@@ -20,7 +20,6 @@ html,body {
 
 .searchBar{
 	padding-bottom: 3px;
-
 }
 
 .btnContact{
@@ -40,6 +39,7 @@ html,body {
 	padding-top: 15px;
 	font-family: Copperplate, "Copperplate Gothic Light";
 	text-align: center;
+	/*margin-left: 40%;*/
 }
 
 .text{
@@ -47,11 +47,17 @@ html,body {
 	font:bold; 
 }
 
+<<<<<<< HEAD
 .row {
 	width: 100%;
 }
 
 
+=======
+#profiletest{
+	padding-left: 220px;
+}
+>>>>>>> 3fa0b17e0cf1a5fc8a8a38e95228416b46a21bb5
 
 
 /* Home Page Style */
@@ -114,3 +120,6 @@ html,body {
 	padding-top: 0;
 }
 
+.row{
+	list-style: none;
+}

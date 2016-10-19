@@ -23,12 +23,27 @@ get '/profile' do
   erb :profile
 end
 
+get '/profile' do
+  @style = "css/style.css" 
+  @title = "@first_name @last_name"
+  # @user = User.find(params[:id])
+
+  erb :profile
+end
+
 get '/profile/:id' do
 	@style = "css/style.css" 
 	@title = "Profile View"
   @user = User.find(params[:id])
 
-	erb :profile
+  erb :profile
+end
+
+get '/settings' do
+  @style = "css/style.css" 
+  @title = "@first_name @last_name"
+
+  erb :profile
 end
 
 get '/search_users' do
@@ -54,11 +69,6 @@ get '/stats' do
   @title = "Food for Thought"
   erb :stats
  end 
-
-
-
-
-
 
 post '/contact' do
   @title = "Contact Restau-RANT-or-RAVE"
