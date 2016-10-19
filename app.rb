@@ -14,10 +14,18 @@ get '/' do
 	erb :home
 end
 
+get '/profile' do 
+  if session[:id] 
+    @user = User.find(session[:id])
+  else
+    redirect '/'
+  end
+  erb :profile
+end
 
 get '/profile/:id' do
 	@style = "css/style.css" 
-	@title = "@first_name @last_name"
+	@title = "Profile View"
   @user = User.find(params[:id])
 
 	erb :profile
