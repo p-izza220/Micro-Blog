@@ -1,13 +1,31 @@
-
+/* Layout Page Style */
 *{
 	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
 }
 
+#contactCon{
+	border: solid lightgrey 1px;
+	background-color: lightgrey;
+}
+
+.searchBar{
+
+}
+
+.col-md-6{
+	padding: 10px;
+}
+
 #footerTag {
-	text-align: center;
-	position: relative;
+	font-size: 13px;
 	padding-top: 15px;
 	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+/*	width: 170px;
+	height: 30px;*/
+	text-align: center;
+	/*margin-left: 40%;*/
+
+}
 
 
 
@@ -19,13 +37,24 @@
 	padding: 0px 50px;
 }
 
-.containerContact{
+/*.containerContact{
 display: inline-block;
-}
+}*/
 
 .btnContact{
-	
+
 }
+
+.navbar{
+	position: relative;
+	min-width: 950px
+}
+
+/*.contactForm{
+	display: inline-block;
+}*/
+
+
 /* Profile Page style */
 
 /* Search_Users Page style*/
