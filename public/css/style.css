@@ -16,7 +16,6 @@
 
 .searchBar{
 	padding-bottom: 3px;
-
 }
 
 .btnContact{
@@ -36,6 +35,7 @@
 	padding-top: 15px;
 	font-family: Copperplate, "Copperplate Gothic Light";
 	text-align: center;
+	/*margin-left: 40%;*/
 }
 
 .text{
@@ -43,7 +43,9 @@
 	font:bold; 
 }
 
-
+#profiletest{
+	padding-left: 220px;
+}
 
 
 /* Home Page Style */
@@ -96,3 +98,6 @@
 
 /* Search_Users Page style*/
 
+.row{
+	list-style: none;
+}
