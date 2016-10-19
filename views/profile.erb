@@ -7,35 +7,19 @@
 			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/profile" id="profileForm">
-				<label for="name">Please enter your first name: </label>
-				<input type="text" name="name" placeholder="first name" />
+				<label for="name">Your name: <%= @user.first_name + " " + @user.last_name if @user %></label>
 				<br>
 				<br>
-				<label for="name">Please enter your last name: </label>
-				<input type="text" name="name" placeholder="last name" />
+				<label for="email">Your contact email: <%= @user.email if @user %></label>
 				<br>
 				<br>
-				<label for="email">Please enter your contact email: </label>
-				<input type="email" name="email" placeholder="e-mail" />
+				<label for="name">Your username: <%= @user.username if @user %></label>
 				<br>
 				<br>
-				<label for="email">Please confirm your contact email: </label>
-				<input type="email" name="email" placeholder="e-mail" />
+				<label for="name">Your password: <%= @user.password if @user %></label>
 				<br>
 				<br>
-				<label for="name">Please choose a username: </label>
-				<input type="text" name="name" placeholder="username" />
-				<br>
-				<br>
-				<label for="name">Please choose a password: </label>
-				<input type="text" name="name" placeholder="password" />
-				<br>
-				<br>
-				<label for="name">Please confirm your password: </label>
-				<input type="text" name="name" placeholder="password" />
-				<br>
-				<br>
-				<input type="submit" class="btnContact"/>
+				<input type="submit" class="btnContact" value="Edit" />
 				</form>
 				<span id="console"><%= @msg %></span>
 			</div>
@@ -44,7 +28,7 @@
 </div>
 
 
-<%= @user.first_name + " " + @user.last_name %>
+<%= @user.first_name + " " + @user.last_name if @user %>
 <% @user.comments.each do |comment| %>
 	<strong><%= comment.restaurant.restaurant_name %></strong> 
 	<p><%= comment.comment %></p>
@@ -52,7 +36,7 @@
 	<% 5.times do |i| %>
 	<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>
 	<% end %>
-<% end %>
+<% end if @user %>
 
 <!-- 
 <i class="fa fa-<= i+1 <= comment.rating ? "star" : "star-o" >"></i> -->

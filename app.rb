@@ -15,12 +15,20 @@ get '/' do
 end
 
 
+get '/profile' do
+  @style = "css/style.css" 
+  @title = "@first_name @last_name"
+  # @user = User.find(params[:id])
+
+  erb :profile
+end
+
 get '/profile/:id' do
-	@style = "css/style.css" 
-	@title = "@first_name @last_name"
+  @style = "css/style.css" 
+  @title = "@first_name @last_name"
   @user = User.find(params[:id])
 
-	erb :profile
+  erb :profile
 end
 
 get '/search_users' do
