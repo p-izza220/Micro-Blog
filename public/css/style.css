@@ -1,15 +1,25 @@
 /* Layout Page Style */
 *{
-	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
 #contactCon{
 	border: solid lightgrey 1px;
 	background-color: lightgrey;
+
 }
 
 .searchBar{
+	padding-bottom: 3px;
 
+}
+
+.btnContact{
+	padding: 0px 10px;
+}
+.sBtn{
+	padding-top: 1px;
+	padding-bottom: 1px;
 }
 
 .col-md-6{
@@ -19,13 +29,14 @@
 #footerTag {
 	font-size: 13px;
 	padding-top: 15px;
-	font-family: Copperplate, "Copperplate Gothic Light", fantasy;
-/*	width: 170px;
-	height: 30px;*/
+	font-family: Copperplate, "Copperplate Gothic Light";
 	text-align: center;
-	/*margin-left: 40%;*/
-
 }
+
+.text{
+	padding-top: 7px;
+}
+
 
 
 
@@ -37,22 +48,32 @@
 	padding: 0px 50px;
 }
 
-/*.containerContact{
-display: inline-block;
-}*/
 
-.btnContact{
 
-}
 
 .navbar{
 	position: relative;
-	min-width: 950px
 }
 
-/*.contactForm{
-	display: inline-block;
-}*/
+#cLim{
+	font-size: 10px;
+	opacity: .3;
+
+}
+
+#contactForm{
+	border: solid lightgrey 1px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-max-width: 650px;
+}
+
+.text-center{
+	padding-top: 10px;
+}
+.contText{
+	font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+}
 
 
 /* Profile Page style */
