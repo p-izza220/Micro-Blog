@@ -1,3 +1,4 @@
+<div class="profileWrapper">
 <div class="commentdetails">
 	<%= @user.first_name + " " + @user.last_name + "visited" %>
 	<% @user.comments.each do |comment| %>
@@ -8,6 +9,7 @@
 		<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>
 		<% end %>
 	<% end %>
+</div>
 </div>
 
 <!-- 
