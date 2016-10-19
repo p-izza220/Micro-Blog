@@ -1,0 +1,12 @@
+<%= @user.first_name + " " + @user.last_name %>
+<% @user.comments.each do |comment| %>
+	<strong><%= comment.restaurant.restaurant_name %></strong> 
+	<p><%= comment.comment %></p>
+
+	<% 5.times do |i| %>
+	<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>
+	<% end %>
+<% end %>
+
+<!-- 
+<i class="fa fa-<= i+1 <= comment.rating ? "star" : "star-o" >"></i> -->
