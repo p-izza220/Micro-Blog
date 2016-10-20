@@ -1,10 +1,14 @@
 /* Layout Page Style */
+html,body {
+	width: 100%;
+	height: 100%;
+}
 *{
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
 .mainContent{
-	min-height: 600px;
+	min-height: 400px;
 }
 
 #contactCon{
@@ -43,6 +47,11 @@
 	font:bold; 
 }
 
+.row {
+	width: 100%;
+}
+
+
 /* Home Page Style */
 
 /* Contact Page style */
@@ -50,9 +59,6 @@
 .navbar-form{
 	padding: 0px 50px;
 }
-
-
-
 
 .navbar{
 	position: relative;
@@ -91,7 +97,17 @@
 	text-align: center;
 }
 
-/* Search_Users Page style*/
+/* Sign_up Page style*/
+.signupWrapper{
+	/*background-image: url("https://media.giphy.com/media/b8q8jYO8xKWoE/giphy.gif");*/
+	width: cover;
+	background-repeat: no-repeat;
+}
+
+#burger {
+	width: 100%;
+	padding-top: 0;
+}
 
 .row{
 	list-style: none;
