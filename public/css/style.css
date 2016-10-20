@@ -47,17 +47,9 @@ html,body {
 	font:bold; 
 }
 
-<<<<<<< HEAD
 .row {
 	width: 100%;
 }
-
-
-=======
-#profiletest{
-	padding-left: 220px;
-}
->>>>>>> 3fa0b17e0cf1a5fc8a8a38e95228416b46a21bb5
 
 
 /* Home Page Style */
@@ -67,9 +59,6 @@ html,body {
 .navbar-form{
 	padding: 0px 50px;
 }
-
-
-
 
 .navbar{
 	position: relative;
