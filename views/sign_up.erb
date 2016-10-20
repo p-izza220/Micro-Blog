@@ -1,48 +1,17 @@
 <div class="signupWrapper">
-	<img src="https://media.giphy.com/media/b8q8jYO8xKWoE/giphy.gif" id="burger">
+	<!-- <img src="https://media.giphy.com/media/b8q8jYO8xKWoE/giphy.gif" id="burger"> -->
+<!-- 	<div class="container"> -->
+		<h1> Fools for Food </h1>
+		<form method="POST" action="/home" id="loginForm" onsubmit="">
+			<input type="text" name="name" placeholder="First name" autocomplete="off" class="inputLog">
+			<input type="text" name="name" placeholder="Surname" autocomplete="off" class="inputLog">
+		<br>
+			<input type="text" name="email" placeholder="Email" autocomplete="off" id="emailLog" class="inputLog">
+		<br>
+			<input type="password" name="password" placeholder="Password" maxlength="25" minlength="10" autocomplete="off" id="passwordLog" class="inputLog">
+		<br>
+			<input type="submit" name="button" id="btnLog" class="inputLog">
+		</form>
+	<span id="console"><%= @msg %></span>
+	<!-- </div> -->
 </div>
-
-
-
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-4">
-				<form method="POST" action="/profile" id="profileForm">
-				<label for="name">Please enter your first name: </label>
-				<input type="text" name="name" placeholder="first name" />
-				<br>
-				<br>
-				<label for="name">Please enter your last name: </label>
-				<input type="text" name="name" placeholder="last name" />
-				<br>
-				<br>
-				<label for="email">Please enter your contact email: </label>
-				<input type="email" name="email" placeholder="e-mail" />
-				<br>
-				<br>
-				<label for="email">Please confirm your contact email: </label>
-				<input type="email" name="email" placeholder="e-mail" />
-				<br>
-				<br>
-				<label for="name">Please choose a username: </label>
-				<input type="text" name="name" placeholder="username" />
-				<br>
-				<br>
-				<label for="name">Please choose a password: </label>
-				<input type="text" name="name" placeholder="password" />
-				<br>
-				<br>
-				<label for="name">Please confirm your password: </label>
-				<input type="text" name="name" placeholder="password" />
-				<br>
-				<br>
-				<input type="submit" class="btnContact"/>
-				</form>
-				<span id="console"><%= @msg %></span>
-			</div>
-		</div>
-	</div>
-</div>
-
