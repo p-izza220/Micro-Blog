@@ -55,6 +55,14 @@ get '/settings' do
   erb :settings
 end
 
+post '/settings' do
+  @style = "css/style.css" 
+  @title = "Settings View"
+  @msg = "This feature is under construction"
+
+  erb :settings
+end
+
 get '/search_users' do
 	@style = "css/style.css" 
 	@title = "Search"

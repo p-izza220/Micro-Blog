@@ -29,7 +29,6 @@ nav li {
 	border: solid lightgrey 1px;
 	background-color: lightgrey;
 	margin-bottom: 20px;
-
 }
 
 .btnContact{
@@ -41,13 +40,6 @@ nav li {
 .sBtn{
 	padding-top: 1px;
 	padding-bottom: 1px;
-}
-
-.btnSettings{
-	display: block;
-	margin: 0px auto;
-	padding: 2px 10px;
-	border-radius: 6px;
 }
 
 .col-md-6{
@@ -69,6 +61,28 @@ nav li {
 
 /* Home Page Style */
 
+/* Settings Page Style */
+
+#settingsForm{
+	border: solid lightgrey 1px;
+	padding: 10px;
+	border-max-width: 650px;
+}
+
+.btnSettings{
+	display: block;
+	margin: 0px auto;
+	padding: 2px 10px;
+	border-radius: 6px;
+}
+
+.tempMsg{
+/*	padding-left: 55px;*/
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 5px;
+}
 /* Contact Page style */
 
 .navbar-form{
@@ -85,12 +99,6 @@ nav li {
 
 }
 
-#settingsForm{
-	border: solid lightgrey 1px;
-	padding: 10px;
-	border-max-width: 650px;
-}
-
 #contactForm{
 	border: solid lightgrey 1px;
 	padding-top: 10px;
@@ -104,7 +112,6 @@ nav li {
 .contText{
 	font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
 }
-
 
 /* Profile Page style */
 
