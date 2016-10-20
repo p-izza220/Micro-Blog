@@ -6,6 +6,7 @@ require './models'
 enable :sessions 
 # this allows us to access sessions
 
+
 set :database, {adapter: "sqlite3", database: "restaurant.sqlite3"}
 # the above line tells this page how to reference the database - when this page is required by other files, they will know how to reference the database too bc of this line of code
 
@@ -44,9 +45,14 @@ end
 
 get '/settings' do
   @style = "css/style.css" 
-  @title = "@first_name @last_name"
+  @title = "Settings View"
+  # if session[:id]
+  #   @user = User.find(session[:id])
+  # else
+  #   redirect '/'
+  # end
 
-  erb :profile
+  erb :settings
 end
 
 get '/search_users' do
@@ -67,11 +73,11 @@ get '/sign_up' do
 	erb :sign_up
 end
 
-get '/stats' do 
+get '/stats' do
   @style = "css/style.css"
   @title = "Food for Thought"
   erb :stats
- end 
+end 
 
 post '/contact' do
   @title = "Contact Restau-RANT-or-RAVE"

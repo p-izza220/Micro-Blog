@@ -13,22 +13,16 @@
 		</div>
 	</div>
 	<div class="commentdetails">
-		<%= @user.first_name + " " + @user.last_name + "visited" if @user %>
-		<% @user.comments.each do |comment| %>
-		<strong><%= comment.restaurant.restaurant_name %></strong> 
-			<p><%= comment.comment %></p>
-	</div>
-	<div class="commentdetails">
 		<%= @user.first_name + " " + @user.last_name + " " + "visited" + " " %>
 		<% @user.comments.each do |comment| %>
 		<strong><%= comment.restaurant.restaurant_name %></strong> 
 		<p><%= "He said: " + comment.comment %></p>
-			<% 5.times do |i| %>
 		<div id="rating">
-			<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>
-			<% end if @user %>
-		</div>
+		<% 5.times do |i| %>
+			<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>	
 		<% end %>
+		</div>
+		<% end if @user %>
 	</div>
 	<% end %>
 </div>
