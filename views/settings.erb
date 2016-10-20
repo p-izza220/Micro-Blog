@@ -5,16 +5,17 @@
 			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/settings" id="settingsForm">
-				<label for="name">Your name: <%= @user.first_name + " " + @user.last_name if @user %></label>
+<!-- 				<label for="name">Your name: <= @user.first_name + " " + @user.last_name if @user ></label> -->
+				<label for="name">Your name: Cam Crews</label>
 				<br>
 				<br>
-				<label for="email">Your contact email: <%= @user.email if @user %></label>
+				<label for="email">Your contact email: camcrews@nycda.com</label>
 				<br>
 				<br>
-				<label for="name">Your username: <%= @user.username if @user %></label>
+				<label for="name">Your username: camerican</label>
 				<br>
 				<br>
-				<label for="name">Your password: <%= @user.password if @user %></label>
+				<label for="name">Your password: hawaii</label>
 				<br>
 				<br>
 				<input type="submit" class="btnContact" value="Edit" />
