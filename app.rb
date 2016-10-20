@@ -61,7 +61,12 @@ post '/settings' do
   @style = "css/style.css" 
   @title = "Settings View"
   @msg = "This feature is under construction"
-
+  if session[:id]
+    @user = User.find(session[:id])
+    @user.update(params)
+  else
+    redirect '/'
+  end
   erb :settings
 end
 
