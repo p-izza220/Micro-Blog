@@ -3,6 +3,9 @@ require 'sinatra/activerecord'
 require 'sqlite3'
 require './models'
 
+enable :sessions 
+# this allows us to access sessions
+
 set :database, {adapter: "sqlite3", database: "restaurant.sqlite3"}
 # the above line tells this page how to reference the database - when this page is required by other files, they will know how to reference the database too bc of this line of code
 
