@@ -17,10 +17,13 @@ get '/' do
 	@style = "css/style.css"
 	@title = "The Rant & Rave Community"
   @users = User.all
+  @restaurants = Restaurant.all
 	erb :home
 end
 
 get '/profile' do 
+  @style = "css/style.css" 
+  @title = "Profile View"
   if session[:user_id] 
     @user = User.find(session[:user_id])
   else
@@ -29,18 +32,10 @@ get '/profile' do
   erb :profile
 end
 
-get '/profile' do
-  @style = "css/style.css" 
-  @title = "Profile View"
-  # @user = User.find(params[:id])
-
-  erb :profile
-end
-
 get '/profile/:id' do
-	@style = "css/style.css" 
-	@title = "Profile View"
+	@style = "css/style.css"
   @user = User.find(params[:id])
+  @title = "#{@user.first_name} #{@user.last_name}"
 
   erb :profile
 end

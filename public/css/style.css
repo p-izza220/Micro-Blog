@@ -106,9 +106,14 @@ nav li {
 	margin: 0 auto;
 	padding-left: 5px;
 	padding-top: 5px;
+	margin-top: 10px;
 }
 
 #rating{
+	text-align: center;
+}
+
+#profileForm{
 	text-align: center;
 }
 

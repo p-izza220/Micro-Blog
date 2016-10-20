@@ -1,17 +1,17 @@
 <div class="profileWrapper">
 	<form method="POST" action="/profile" id="profileForm">
-		<label for="name"><%= @user.first_name + " " + @user.last_name if @user %></label>
+		<label for="name"><%= @user.first_name + " " + @user.last_name + "'s reviews" if @user %></label> 
 	</form>
-	<div class="commentdetails">
-		<%= @user.first_name + " " + @user.last_name + " " + "visited" + " " %>
 		<% @user.comments.each do |comment| %>
-		<strong><%= comment.restaurant.restaurant_name %></strong> 
-		<p><%= "S/he said: " + comment.comment %></p>
-		<div id="rating">
-		<% 5.times do |i| %>
-			<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>	
-		<% end %>
+		<div class="commentdetails">
+			<strong><%= comment.restaurant.restaurant_name %></strong> 
+			<p><%= "S/he said: " + comment.comment %></p>
+			<div id="rating">
+			<% 5.times do |i| %>
+				<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>	
+			<% end %>
+			</div>
 		</div>
 		<% end if @user %>
-	</div>
+	
 </div>
