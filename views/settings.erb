@@ -1,7 +1,7 @@
 <div class="settingsWrapper">
 	<div class="container">	
 		<div class="row">
-			<div class="col-xs-2">
+			<div class="col-xs-4">
 			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/settings" id="settingsForm">
@@ -18,9 +18,9 @@
 				<label for="name">Your password: hawaii</label>
 				<br>
 				<br>
-				<input type="submit" class="btnContact" value="Edit" />
+				<input type="submit" class="btnSettings" value="Edit" />
 				</form>
-				<span id="console"><%= @msg %></span>
+				<span class="tempMsg" id="console"><strong><%= @msg %></strong></span>
 			</div>
 		</div>
 	</div>
