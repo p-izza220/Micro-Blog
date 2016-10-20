@@ -1,22 +1,12 @@
 <div class="profileWrapper">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-4">
-				<form method="POST" action="/profile" id="profileForm">
-				<label for="name"><%= @user.first_name + " " + @user.last_name if @user %></label>
-					<br>
-					<br>
-				<input type="submit" class="btnContact" value="Edit" />
-				</form>
-				<span id="console"><%= @msg %></span>
-			</div>
-		</div>
-	</div>
+	<form method="POST" action="/profile" id="profileForm">
+		<label for="name"><%= @user.first_name + " " + @user.last_name if @user %></label>
+	</form>
 	<div class="commentdetails">
 		<%= @user.first_name + " " + @user.last_name + " " + "visited" + " " %>
 		<% @user.comments.each do |comment| %>
 		<strong><%= comment.restaurant.restaurant_name %></strong> 
-		<p><%= "He said: " + comment.comment %></p>
+		<p><%= "S/he said: " + comment.comment %></p>
 		<div id="rating">
 		<% 5.times do |i| %>
 			<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>	
