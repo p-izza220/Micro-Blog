@@ -3,7 +3,9 @@ require 'sinatra/activerecord'
 require 'sqlite3'
 require './models'
 
+ 
 enable :sessions 
+
 # this allows us to access sessions
 
 
@@ -19,8 +21,8 @@ get '/' do
 end
 
 get '/profile' do 
-  if session[:id] 
-    @user = User.find(session[:id])
+  if session[:user_id] 
+    @user = User.find(session[:user_id])
   else
     redirect '/'
   end
@@ -29,7 +31,7 @@ end
 
 get '/profile' do
   @style = "css/style.css" 
-  @title = "@first_name @last_name"
+  @title = "Profile View"
   # @user = User.find(params[:id])
 
   erb :profile
@@ -55,21 +57,31 @@ get '/settings' do
   erb :settings
 end
 
-get '/search_users' do
-	@style = "css/style.css" 
-	@title = "Search"
-	erb :search_users
-end	
-
 get '/contact' do 
 	@style = "css/style.css"
 	@title = "Contact Us"
 	erb :contact 
 end
 
+get '/sign_in' do 
+  @style = "css/style.css"
+  @title = "Welcome Foodies"
+  erb :sign_in
+end
+
+post '/sign_in' do
+  user = User.find_by( username: params[:username], password: params[:password] )
+  if( user ) 
+    session[:user_id] = user.id
+  else
+    redirect '/sign_up'
+  end
+  redirect '/'
+end
+
 get '/sign_up' do 
 	@style = "css/style.css"
-	@title = "Login"
+	@title = "Sign Up"
 	erb :sign_up
 end
 
@@ -80,7 +92,7 @@ get '/stats' do
 end 
 
 post '/contact' do
-  @title = "Contact Restau-RANT-or-RAVE"
+  @title = "Contact Us"
   @style = "css/style.css"
   @msg = "Thanks for your comments - we'll be in touch shortly!"
 
@@ -90,10 +102,10 @@ post '/contact' do
 
   mail = SendGrid::Mail.new( 
     SendGrid::Email.new(email: "nyc.foolsforfood@gmail.com"),
-    "Thanks for contacting these fools for food!",
+    "Thanks for contacting the fools for food team!",
     SendGrid::Email.new(email: params[:email] ),
     SendGrid::Content.new(type: 'text/plain', value: <<-EMAILCONTENTS
-      Hello #{params[:name]},
+      Hello #{params[:first_name]}, #{params[:last_name]},
 
       Thanks for letting us know how you feel. We are always trying to improve user experience!
 
@@ -105,7 +117,7 @@ post '/contact' do
       
       #{params[:message]}
 EMAILCONTENTS
-      )
+    )
   )
   sg = SendGrid::API.new( api_key: ENV['SENDGRID_API_KEY'] )
 

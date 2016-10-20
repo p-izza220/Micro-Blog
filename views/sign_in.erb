@@ -1,0 +1,14 @@
+
+<div class="signinWrapper">
+<h1 id="welcome"> Fools for Food </h1>
+<h5> Login required </h5>
+		<form method="POST" action="/sign_in">
+			<input type="text" name="username" placeholder="Username" autocomplete="off" id="usernameLog" class="inputLog">
+				<br>
+					<input type="password" name="password" placeholder="Password" maxlength="25" minlength="10" autocomplete="off" id="passwordLog" class="inputLog">
+				<br>
+					<input type="submit" name="button" value="Login" id="btnLog" class="inputLog">
+				</form>
+			<span id="console"><%= @msg %></span>
+		</form>
+</div>
