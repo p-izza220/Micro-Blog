@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'sqlite3'
 require './models'
-
+require 'sendgrid-ruby'
  
 enable :sessions 
 
@@ -105,7 +105,7 @@ post '/contact' do
     "Thanks for contacting the fools for food team!",
     SendGrid::Email.new(email: params[:email] ),
     SendGrid::Content.new(type: 'text/plain', value: <<-EMAILCONTENTS
-      Hello #{params[:first_name]}, #{params[:last_name]},
+      Hello #{params[:name]},
 
       Thanks for letting us know how you feel. We are always trying to improve user experience!
 
@@ -131,6 +131,5 @@ else
   @msg = "This email address is invalid"
 end
   # end email check
-
   erb :contact
 end
