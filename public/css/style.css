@@ -32,8 +32,6 @@ nav li {
 
 }
 
-
-
 .btnContact{
 	padding: 0px 10px;
 }
@@ -43,6 +41,13 @@ nav li {
 .sBtn{
 	padding-top: 1px;
 	padding-bottom: 1px;
+}
+
+.btnSettings{
+	display: block;
+	margin: 0px auto;
+	padding: 2px 10px;
+	border-radius: 6px;
 }
 
 .col-md-6{
