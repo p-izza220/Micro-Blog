@@ -1,13 +1,11 @@
 <div class="profileWrapper">
-	<div class="container">	
+	<div class="container">
 		<div class="row">
-			<div class="col-xs-2">
-			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/profile" id="profileForm">
 				<label for="name"><%= @user.first_name + " " + @user.last_name if @user %></label>
-				<br>
-				<br>
+					<br>
+					<br>
 				<input type="submit" class="btnContact" value="Edit" />
 				</form>
 				<span id="console"><%= @msg %></span>
