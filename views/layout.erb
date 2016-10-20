@@ -22,33 +22,24 @@
 </head>
 
 <body>
-	<div class="container" id="contactCon">
-		<div class="row">
-			<div class="col-xs-1 text">
-				<li><a href="/" class="navText"> Home </a></li>
-			</div>
-			<div class="col-xs-1 text">
-				<li><a href="/profile" class="navText"> My Profile </a></li>
-			</div>
-			<div class="col-xs-2 text">
-				<li><a href="/stats" class="navText"> &nbsp &nbsp &nbsp Food for Thought </a></li>
-			</div>
-			<div class="col-xs-1 text">
+	<header id="contactCon">
+		<nav>
+			<ul>
+				<li><a href="/" 1class="navText"> Home </a></li>
+				<li><a href="/profile" class="navText"> Profile </a></li>
+				<li><a href="/stats" class="navText"> Food for Thought </a></li>
 				<li><a href="/contact" class="navText"> Contact </a></li>
-			</div>	
-			<div class="col-xs-2 text">
 				<li><a href="/stats" class="navText"> Settings </a></li>
-			</div>
-			<div class="col-xs-5 sBtn">
-				<form class="searchBar">
-    				<input type="text" placeholder="Search">
-    				<button type="submit" class="btn btn-default"> Submit </button>
-    			</form>
-			</div>
-			
-		</div>
-	</div>
-
+			</ul>
+			<form class="searchBar">
+				<input type="text" placeholder="Search">
+				<button type="submit" class="btn btn-default"> Submit </button>
+			</form>
+			<ul>
+				<li><a href="/sign_up" class="navText"> Logout </a></li>
+			</ul>
+		</nav>
+	</header>
 	<div class="mainContent">
 		<%= yield %>
 	</div>

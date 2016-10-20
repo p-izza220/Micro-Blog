@@ -6,9 +6,23 @@ html,body {
 *{
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
+}
+nav ul {
+	list-style-type: none;
+	display: inline-block;
+}
+nav li {
+	display: inline-block;
+	padding: 0 20px;
+}
+
+.searchBar{
+	padding: 0 70px 3px;
+	display:inline-block;
+}
 
 .mainContent{
-	min-height: 400px;
+	min-height: 500px;
 }
 
 #contactCon{
@@ -18,12 +32,13 @@ html,body {
 
 }
 
-.searchBar{
-	padding-bottom: 3px;
-}
+
 
 .btnContact{
 	padding: 0px 10px;
+}
+.btn-default{
+	padding: 2px 7px;
 }
 .sBtn{
 	padding-top: 1px;
@@ -47,17 +62,6 @@ html,body {
 	font:bold; 
 }
 
-<<<<<<< HEAD
-.row {
-	width: 100%;
-}
-
-
-=======
-#profiletest{
-	padding-left: 220px;
-}
->>>>>>> 3fa0b17e0cf1a5fc8a8a38e95228416b46a21bb5
 
 
 /* Home Page Style */
@@ -110,9 +114,18 @@ html,body {
 
 /* Sign_up Page style*/
 .signupWrapper{
-	/*background-image: url("https://media.giphy.com/media/b8q8jYO8xKWoE/giphy.gif");*/
-	width: cover;
-	background-repeat: no-repeat;
+	border: solid lightgrey 1px;
+	padding: 5px;
+	width: 450px;
+	text-align: center;
+	margin: 0 auto;
+}
+#emailLog{
+	width: 317px;
+}
+
+#passwordLog{
+	width: 317px;
 }
 
 #burger {
@@ -120,6 +133,15 @@ html,body {
 	padding-top: 0;
 }
 
-.row{
+.inputLog{
+	margin-top: 5px;
+}
+
+/*.row{
 	list-style: none;
+}
+*/
+.btnLog{
+	margin-bottom: 4px;
+	opacity: .4;
 }
