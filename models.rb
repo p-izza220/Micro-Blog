@@ -16,3 +16,10 @@ class Comment <  ActiveRecord::Base
 	belongs_to :user
 	belongs_to :restaurant
 end
+
+@userFullName = user.first_name + " " + @user.last_name
+
+
+
+
+
