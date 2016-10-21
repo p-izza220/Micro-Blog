@@ -7,9 +7,9 @@ arnold = User.create(first_name: 'Arnold', last_name: 'Hundert', email: 'flash@r
 
 
 #create Restaurants
-juice = Restaurant.create(restaurant_name: 'Juice Generation', cuisine_type: 'healthy')
-taco = Restaurant.create(restaurant_name: 'Dos Toros', cuisine_type: 'mexican')
-pizza = Restaurant.create(restaurant_name: 'Wanted Pizza', cuisine_type: 'italian')
+juice = Restaurant.create(name: 'Juice Generation', cuisine_type: 'healthy')
+taco = Restaurant.create(name: 'Dos Toros', cuisine_type: 'mexican')
+pizza = Restaurant.create(name: 'Wanted Pizza', cuisine_type: 'italian')
 
 # create comments
 Comment.create(user_id: cam.id, restaurant_id: taco.id, rating: 5, comment: "This is the most delicious taco place, whatever you order is going to be delicious.")
