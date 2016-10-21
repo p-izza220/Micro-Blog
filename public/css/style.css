@@ -162,6 +162,21 @@ nav li {
 	width: 317px;
 }
 
+#signupMes{
+	text-align: center;
+	font-size: 50px;
+	padding: 10px;
+
+}
+
+/*Stats Page Style*/
+.statsWrapper{
+	text-align: center;
+}
+
+#rotateimg{
+	width: 400px;
+}
 
 
 

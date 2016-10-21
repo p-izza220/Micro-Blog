@@ -1,26 +1,53 @@
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+//ref: http://stackoverflow.com/questions/13389751/change-tag-using-javascript#answer-13389835	
+	document.querySelector('.btnSettings[value=Edit]').addEventListener('click', toggleInput );
+});
+function toggleInput(event){
+	var fields = ["first_name","last_name","email","username","password"];
+	fields.forEach( function(field) {
+		var span = document.getElementById(field);
+		var input = document.createElement("input");
+		input.value = span.innerText;
+		input.name = field;
+		span.parentNode.insertBefore(input,span);
+//			span.parentNode.removeChild(span);
+		span.remove();
+	});
+	event.preventDefault();
+	event.target.value = "Save";
+	event.target.removeEventListener('click',toggleInput);
+}
+</script>
+
 <div class="settingsWrapper">
 	<div class="container">	
 		<div class="row">
-			<div class="col-xs-2">
+			<div class="col-xs-4">
 			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/settings" id="settingsForm">
 <!-- 				<label for="name">Your name: <= @user.first_name + " " + @user.last_name if @user ></label> -->
-				<label for="name">Your name: Cam Crews</label>
+				<label for="name">Your name:</label> 
+					<span id="first_name"> Cam </span> 
+					<span id="last_name">Crews</span>
 				<br>
 				<br>
-				<label for="email">Your contact email: camcrews@nycda.com</label>
+				<label for="email">Your contact email: </label>
+					<span id="email">camcrews@nycda.com</span>
 				<br>
 				<br>
-				<label for="name">Your username: camerican</label>
+				<label for="username">Your username: </label>
+					<span id="username">camerican</span>
 				<br>
 				<br>
-				<label for="name">Your password: hawaii</label>
+				<label for="password">Your password: </label>
+					<span id="password">hawaii</span>
 				<br>
 				<br>
-				<input type="submit" class="btnContact" value="Edit" />
+				<input type="submit" class="btnSettings" value="Edit" />
 				</form>
-				<span id="console"><%= @msg %></span>
+					<span class="tempMsg" id="console"><strong><%= @msg %></strong></span>
 			</div>
 		</div>
 	</div>

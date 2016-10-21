@@ -15,53 +15,8 @@ set :database, {adapter: "sqlite3", database: "restaurant.sqlite3"}
 
 get '/' do
 	@style = "css/style.css"
-	@title = "The Rant & Rave Community"
-  @users = User.all
-  @restaurants = Restaurant.all
-	erb :home
-end
-
-get '/profile' do 
-  @style = "css/style.css" 
-  @title = "Profile View"
-  if session[:user_id] 
-    @user = User.find(session[:user_id])
-  else
-    redirect '/'
-  end
-  erb :profile
-end
-
-get '/profile/:id' do
-	@style = "css/style.css"
-  @user = User.find(params[:id])
-  @title = "#{@user.first_name} #{@user.last_name}"
-
-  erb :profile
-end
-
-get '/settings' do
-  @style = "css/style.css" 
-  @title = "Settings View"
-  # if session[:id]
-  #   @user = User.find(session[:id])
-  # else
-  #   redirect '/'
-  # end
-
-  erb :settings
-end
-
-get '/contact' do 
-	@style = "css/style.css"
-	@title = "Contact Us"
-	erb :contact 
-end
-
-get '/sign_in' do 
-  @style = "css/style.css"
-  @title = "Welcome Foodies"
-  erb :sign_in
+	@title = "Welcome Foodies"
+	erb :sign_in
 end
 
 post '/sign_in' do
@@ -74,6 +29,68 @@ post '/sign_in' do
   redirect '/'
 end
 
+get '/stats' do
+  @style = "css/style.css"
+  @title = "Fools for Food: Home"
+  @users = User.all
+  @restaurants = Restaurant.all
+
+  #to do: define our image @img
+  #1) hard code image names into array and select 1
+  @img = ['/img/burger.jpeg', '/img/pasta.jpeg', '/img/dogBurger.jpeg', '/img/thai.jpeg'].sample
+  #if I were to write it as an interperpulated "/img/"#{['/img/burger.jpeg', '/img/pasta.jpeg', '/img/dogBurger.jpeg', '/img/thai.jpeg'].sample}
+  #2) look up files & select one
+  # Dir.new('./public/img/').select{|a| a[0] != "."}.sample This is another way to do what I am doing underneath 1) - the last part of the code tells the directory not to select files that are . or ..
+  
+if session[:id]
+  @user = User.find(session[:id])
+else
+  redirect '/'
+end
+  erb :stats 
+end  
+
+get '/profile' do 
+  @style = "css/style.css" 
+  @title = "Fools for Food: Profile"
+  if session[:user_id] 
+    @user = User.find(session[:user_id])
+  else
+    redirect '/'
+  end
+  erb :profile
+end
+
+get '/profile/:id' do
+	@style = "css/style.css"
+  @user = User.find(params[:id])
+  @title = "#{@user.first_name} #{@user.last_name}"
+  if session[:id]
+    @user = User.find(session[:id])
+  else
+    redirect '/'
+  end
+  erb :profile
+end
+
+get '/settings' do
+  @style = "css/style.css" 
+  @title = "Profile Settings"
+  if session[:id]
+    @user = User.find(session[:id])
+  else
+    redirect '/'
+  end
+  erb :settings
+end
+
+get '/contact' do 
+	@style = "css/style.css"
+	@title = "Contact Us"
+	erb :contact 
+end
+
+
 get '/sign_up' do 
 	@style = "css/style.css"
 	@title = "Sign Up"
@@ -83,6 +100,11 @@ end
 get '/stats' do
   @style = "css/style.css"
   @title = "Food for Thought"
+  if session[:id]
+    @user = User.find(session[:id])
+  else
+    redirect '/'
+  end
   erb :stats
 end 
 

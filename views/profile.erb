@@ -4,7 +4,7 @@
 	</form>
 		<% @user.comments.each do |comment| %>
 		<div class="commentdetails">
-			<strong><%= comment.restaurant.restaurant_name %></strong> 
+			<strong><%= comment.restaurant.name %></strong> 
 			<p><%= "S/he said: " + comment.comment %></p>
 			<div id="rating">
 			<% 5.times do |i| %>
@@ -13,5 +13,4 @@
 			</div>
 		</div>
 		<% end if @user %>
-	
 </div>
