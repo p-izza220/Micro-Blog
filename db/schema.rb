@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017194157) do
+ActiveRecord::Schema.define(version: 20161017194159) do
 
   create_table "comments", id: false, force: :cascade do |t|
     t.integer "user_id",                 null: false
@@ -20,10 +20,9 @@ ActiveRecord::Schema.define(version: 20161017194157) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string "restaurant_name"
+    t.string "name"
     t.string "cuisine_type"
-    t.string "location"
-    t.string "contact_number",  limit: 10
+    t.string "phone",        limit: 18
     t.string "hours"
   end
 

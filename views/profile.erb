@@ -15,7 +15,7 @@
 	<div class="commentdetails">
 		<%= @user.first_name + " " + @user.last_name + " " + "visited" + " " %>
 		<% @user.comments.each do |comment| %>
-		<strong><%= comment.restaurant.restaurant_name %></strong> 
+		<strong><%= comment.restaurant.name %></strong> 
 		<p><%= "He said: " + comment.comment %></p>
 		<div id="rating">
 		<% 5.times do |i| %>
