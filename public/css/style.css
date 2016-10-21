@@ -2,8 +2,6 @@
 html,body {
 	width: 100%;
 	height: 100%;
-	background-image: url(/img/3.jpeg);
-	background-size: 1307px;
 }
 
 *{
@@ -56,7 +54,7 @@ nav li {
 }
 
 #footerTag {
-	margin-top: 55px;
+	margin-top: 80px;
 	margin-right: 35px;
 	font-size: 14px;
 	padding-top: 15px;
@@ -138,7 +136,7 @@ nav li {
 .commentdetails{
 	width: 250px;
 	border: solid black 1px;
-	margin: 0 auto;
+/*	margin: 0 auto;*/
 	padding-left: 5px;
 	padding-top: 5px;
 	margin-top: 10px;
@@ -153,13 +151,18 @@ nav li {
 }
 
 /* Sign_in Page style*/
+body.burger {
+	background-image: url(/img/3.jpeg);
+	background-size: 1308px;
+}
+
 .signinWrapper{
 	border: solid rgba(255,255,255,0.85) 1px;
-	border-radius: 55%;
+	border-radius: 68%;
 	padding: 20px;
-	width: 400px;
+	width: 390px;
 	text-align: center;
-	margin-left: 65%;
+	margin-left: 67%;
 	margin-top: 20px;
 	background-color: rgba(255,255,255,0.85);
 }
@@ -193,16 +196,28 @@ nav li {
 }
 
 /*Sign_up Page Style*/
+body.icecream{
+	background-image: url(/img/7.jpeg);
+	background-size: 1450px 827px;
+}
+
 
 .signupWrapper{
-	border: solid #5B86E1 1px;
-	padding: 5px;
-	width: 450px;
+	border: solid rgba(255, 255, 255, 0.6) 1px;
+	border-radius: 60%;
+	padding: 20px;
+	width: 400px;
 	text-align: center;
-	margin: 0 auto;
+	margin-right: 65%;
+	margin-top: 315px;
+	background-color: rgba(255,255,255,0.6);
+	color: black;
 }
 
 #emailLog{
+	width: 317px;
+}
+#passwordLog{
 	width: 317px;
 }
 

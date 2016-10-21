@@ -16,8 +16,14 @@ set :database, {adapter: "sqlite3", database: "restaurant.sqlite3"}
 get '/' do
 	@style = "css/style.css"
 	@title = "Welcome Foodies"
+  if session[:user_id] 
+    @user = User.find(session[:user_id])
+  else
+    redirect '/'
+  end
 	erb :sign_in
 end
+
 
 get '/home' do
   @style = "css/style.css"
@@ -37,26 +43,26 @@ post '/sign_in' do
   redirect '/home'
 end
 
-get '/stats' do
-  @style = "css/style.css"
-  @title = "Fools for Food: Home"
-  @users = User.all
-  @restaurants = Restaurant.all
+# get '/stats' do
+#   @style = "css/style.css"
+#   @title = "Fools for Food: Home"
+#   @users = User.all
+#   @restaurants = Restaurant.all
 
-  #to do: define our image @img
-  #1) hard code image names into array and select 1
-  @img = ['/img/burger.jpeg', '/img/pasta.jpeg', '/img/dogBurger.jpeg', '/img/thai.jpeg'].sample
-  #if I were to write it as an interperpulated "/img/"#{['/img/burger.jpeg', '/img/pasta.jpeg', '/img/dogBurger.jpeg', '/img/thai.jpeg'].sample}
-  #2) look up files & select one
-  # Dir.new('./public/img/').select{|a| a[0] != "."}.sample This is another way to do what I am doing underneath 1) - the last part of the code tells the directory not to select files that are . or ..
+#   #to do: define our image @img
+#   #1) hard code image names into array and select 1
+#   @img = ['/img/burger.jpeg', '/img/pasta.jpeg', '/img/dogBurger.jpeg', '/img/thai.jpeg'].sample
+#   #if I were to write it as an interperpulated "/img/"#{['/img/burger.jpeg', '/img/pasta.jpeg', '/img/dogBurger.jpeg', '/img/thai.jpeg'].sample}
+#   #2) look up files & select one
+#   # Dir.new('./public/img/').select{|a| a[0] != "."}.sample This is another way to do what I am doing underneath 1) - the last part of the code tells the directory not to select files that are . or ..
   
-if session[:id]
-  @user = User.find(session[:id])
-else
-  redirect '/'
-end
-  erb :stats 
-end  
+# if session[:id]
+#   @user = User.find(session[:id])
+# else
+#   redirect '/'
+# end
+#   erb :stats 
+# end  
 
 get '/profile' do 
   @style = "css/style.css" 
@@ -103,12 +109,6 @@ post '/settings' do
     redirect '/'
   end
   erb :settings
-end
-
-get '/search_users' do
-	@style = "css/style.css" 
-	@title = "Search"
-	erb :search_users
 end	
 
 get '/contact' do 
@@ -124,16 +124,6 @@ get '/sign_up' do
 	erb :sign_up
 end
 
-get '/stats' do
-  @style = "css/style.css"
-  @title = "Food for Thought"
-  if session[:id]
-    @user = User.find(session[:id])
-  else
-    redirect '/'
-  end
-  erb :stats
-end 
 
 post '/contact' do
   @title = "Contact Us"
@@ -175,3 +165,19 @@ end
   # end email check
   erb :contact
 end
+
+helpers do 
+  def current_user
+    User.find(session[:user_id])
+  end
+  def body_class
+    if request.path_info == '/'
+      ' class="burger"'
+    elsif request.path_info == '/sign_up'
+     ' class="icecream"'
+    else
+      ''
+    end
+  end
+end
+
