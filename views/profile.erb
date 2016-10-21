@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-4">
 				<form method="POST" action="/profile" id="profileForm">
-				<label for="name"><%= @user.first_name + " " + @user.last_name if @user %></label>
+				<label for="name"> <%= @user.full_name %> </label>
 					<br>
 					<br>
 				<input type="submit" class="btnContact" value="Edit" />
@@ -13,7 +13,7 @@
 		</div>
 	</div>
 	<div class="commentdetails">
-		<%= @user.first_name + " " + @user.last_name + " " + "visited" + " " %>
+		<%= @user.full_name + " visited" + " " %>
 		<% @user.comments.each do |comment| %>
 		<strong><%= comment.restaurant.name %></strong> 
 		<p><%= "He said: " + comment.comment %></p>

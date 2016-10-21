@@ -21,11 +21,13 @@ get '/' do
 end
 
 get '/profile' do 
-  if session[:user_id] 
-    @user = User.find(session[:user_id])
-  else
-    redirect '/'
-  end
+  @style = "css/style.css" 
+  @title = "Profile View"
+  # if session[:user_id] 
+  #   @user = User.find(session[:user_id])
+  # else
+  #   redirect '/'
+  # end
   erb :profile
 end
 
