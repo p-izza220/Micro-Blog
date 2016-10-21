@@ -126,20 +126,6 @@ get '/sign_up' do
 	erb :sign_up
 end
 
-<<<<<<< HEAD
-get '/stats' do
-  @style = "css/style.css"
-  @title = "Food for Thought"
-  if session[:user_id]
-    @user = User.find(session[:user_id])
-  else
-    redirect '/'
-  end
-  erb :stats
-end 
-=======
->>>>>>> 4dbe45c4cbbe354fa38177b12ccae42758482499
-
 post '/contact' do
   @title = "Contact Us"
   @style = "css/style.css"
