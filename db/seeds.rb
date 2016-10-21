@@ -14,12 +14,10 @@ danna = User.create(first_name: 'Danna', last_name: 'Wolf', email: 'danna@nycda.
 juice = Restaurant.create(name: 'Juice Generation', cuisine_type: 'healthy')
 taco = Restaurant.create(name: 'Dos Toros', cuisine_type: 'mexican')
 pizza = Restaurant.create(name: 'Wanted Pizza', cuisine_type: 'italian')
-<<<<<<< HEAD
 mexican = Restaurant.create(name: 'Chipotle', cuisine_type: 'mexican')
 french = Restaurant.create(name: 'Cherche Midi', cuisine_type: 'french')
 american = Restaurant.create(name: 'Cam\'s Cuisine', cuisine_type: 'american')
-=======
->>>>>>> 45fbb4b0c9932b90722d04ae081346e5246b7dec
+
 
 # create comments
 Comment.create(user_id: cam.id, restaurant_id: taco.id, rating: 5, comment: "This is the most delicious taco place, whatever you order is going to be delicious.")

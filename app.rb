@@ -19,6 +19,14 @@ get '/' do
 	erb :sign_in
 end
 
+get '/home' do
+  @style = "css/style.css"
+  @title = "Welcome Home"
+  @users = User.all
+  @restaurants = Restaurant.all
+  erb :home
+end
+
 post '/sign_in' do
   user = User.find_by( username: params[:username], password: params[:password] )
   if( user ) 
@@ -26,7 +34,7 @@ post '/sign_in' do
   else
     redirect '/sign_up'
   end
-  redirect '/'
+  redirect '/home'
 end
 
 get '/stats' do
