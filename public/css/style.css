@@ -97,20 +97,16 @@ nav li {
 	padding: 10px;
 	border-max-width: 650px;
 }
-
-.btnSettings{
+.btnSettingsAlign{
 	display: block;
 	margin: 0px auto;
+}
+.btnSettings{
+	margin-left: 28px;
 	padding: 2px 10px;
 	border-radius: 6px;
 }
 
-.tempMsg{
-	display: block;
-	font-size: 18px;
-	text-align: center;
-	padding-top: 5px;
-}
 /* Contact Page style */
 
 .navbar-form{
@@ -225,34 +221,6 @@ nav li {
 #rotateimg{
 	width: 400px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

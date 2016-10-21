@@ -17,6 +17,7 @@ function toggleInput(event){
 	event.preventDefault();
 	event.target.value = "Save";
 	event.target.removeEventListener('click',toggleInput);
+	document.getElementById("toggleVisible").style.visibility = "hidden";
 }
 </script>
 
@@ -27,7 +28,6 @@ function toggleInput(event){
 			</div>
 			<div class="col-xs-4">
 				<form method="POST" action="/settings" id="settingsForm">
-<!-- 				<label for="name">Your name: <= @user.first_name + " " + @user.last_name if @user ></label> -->
 				<label for="first_name">First Name:</label>
 				<span id="first_name">Cam</span>
 				<br>
@@ -50,7 +50,10 @@ function toggleInput(event){
 					<span id="password">hawaii</span>
 				<br>
 				<br>
-				<input type="submit" class="btnSettings" value="Edit" />
+				<div class="btnSettingsAlign">
+					<input type="submit" class="btnSettings" value="Edit My Profile" />
+					<input type="submit" class="btnSettings" id="toggleVisible" value="Delete My Profile" />
+				</div>
 				</form>
 					<span class="tempMsg" id="console"><strong><%= @msg %></strong></span>
 			</div>

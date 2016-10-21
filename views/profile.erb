@@ -2,13 +2,14 @@
 	<form method="POST" action="/profile" id="profileForm">
 		<label for="name"><%= @user.first_name + " " + @user.last_name + "'s reviews" if @user %></label> 
 	</form>
+
 		<% @user.comments.each do |comment| %>
 		<div class="commentdetails">
 			<strong><%= comment.restaurant.name %></strong> 
 			<p><%= "S/he said: " + comment.comment %></p>
 			<div id="rating">
 			<% 5.times do |i| %>
-				<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>	
+				<i class="fa fa-star<%= "-o" if i+1 > comment.rating %>"></i>
 			<% end %>
 			</div>
 		</div>
