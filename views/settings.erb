@@ -1,7 +1,7 @@
 <script>
 document.addEventListener("DOMContentLoaded",function(){
 //ref: http://stackoverflow.com/questions/13389751/change-tag-using-javascript#answer-13389835	
-	document.querySelector('.btnSettings[value=Edit]').addEventListener('click', toggleInput );
+	document.querySelector('.btnSettings[value="Edit My Profile"]').addEventListener('click', toggleInput );
 });
 function toggleInput(event){
 	var fields = ["first_name","last_name","email","username","password"];
@@ -10,6 +10,9 @@ function toggleInput(event){
 		var input = document.createElement("input");
 		input.value = span.innerText;
 		input.name = field;
+		if (field == "first_name") {
+			input.setAttribute("autofocus","autofocus");
+		};
 		span.parentNode.insertBefore(input,span);
 //			span.parentNode.removeChild(span);
 		span.remove();
@@ -17,7 +20,7 @@ function toggleInput(event){
 	event.preventDefault();
 	event.target.value = "Save";
 	event.target.removeEventListener('click',toggleInput);
-	document.getElementById("toggleVisible").style.visibility = "hidden";
+	document.getElementById("toggleInvisible").style.display = "none";
 }
 </script>
 
@@ -29,33 +32,30 @@ function toggleInput(event){
 			<div class="col-xs-4">
 				<form method="POST" action="/settings" id="settingsForm">
 				<label for="first_name">First Name:</label>
-				<span id="first_name">Cam</span>
-				<br>
+				<span id="first_name"><%= @user.first_name %></span>
 				<br>
 				<br>
 				<label for="last_name">Last Name:</label>
-				<span id="last_name">Crews</span>
-				<br>
+				<span id="last_name"><%= @user.last_name %></span>
 				<br>
 				<br>
 				<label for="email">email:</label>
-				<span id="email">camcrews@nycda.com</span>
+				<span id="email"><%= @user.email %></span>
 				<br>
 				<br>
 				<label for="username"> Username: </label>
-					<span id="username">camerican</span>
+					<span id="username"><%= @user.username %></span>
 				<br>
 				<br>
 				<label for="password"> Password: </label>
-					<span id="password">hawaii</span>
+					<span id="password"><%= @user.password %></span>
 				<br>
 				<br>
 				<div class="btnSettingsAlign">
 					<input type="submit" class="btnSettings" value="Edit My Profile" />
-					<input type="submit" class="btnSettings" id="toggleVisible" value="Delete My Profile" />
+					<input type="submit" class="btnSettings" id="toggleInvisible" value="Delete My Profile" />
 				</div>
 				</form>
-					<span class="tempMsg" id="console"><strong><%= @msg %></strong></span>
 			</div>
 		</div>
 	</div>
