@@ -84,6 +84,25 @@ get '/settings' do
   erb :settings
 end
 
+post '/settings' do
+  @style = "css/style.css" 
+  @title = "Settings View"
+  @msg = "This feature is under construction"
+  if session[:id]
+    @user = User.find(session[:id])
+    @user.update(params)
+  else
+    redirect '/'
+  end
+  erb :settings
+end
+
+get '/search_users' do
+	@style = "css/style.css" 
+	@title = "Search"
+	erb :search_users
+end	
+
 get '/contact' do 
 	@style = "css/style.css"
 	@title = "Contact Us"
@@ -114,8 +133,6 @@ post '/contact' do
   @msg = "Thanks for your comments - we'll be in touch shortly!"
 
   if /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/ =~ params[:email]
-
-  erb :contact
 
   mail = SendGrid::Mail.new( 
     SendGrid::Email.new(email: "nyc.foolsforfood@gmail.com"),
